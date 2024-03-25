@@ -1,2 +1,44 @@
 
 /* Your CSS Code here. */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  padding: 10px;
+  width: 400px; /* Adjust the width as needed */
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5)); /* Apply a blur shadow */
+}
+
+#input {
+  width: 100%;
+  height: 80px;
+  font-size: 30px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the width */
+   /* Add some spacing between input and buttons */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+  width: 100%;
+  height: 80px;
+  font-size: 30px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#ans {
+  background-color: blue;
+  color: white;
+}
