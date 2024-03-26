@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     buttons.forEach(button => {
         button.addEventListener('click', function () {
-            const value = this.textContent;
+            const buttonText = this.textContent;
+            const currentValue = input.value;
 
-            switch (value) {
+            switch (buttonText) {
                 case '=':
                     evaluateExpression();
                     break;
@@ -16,18 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 case '<-':
                     deleteLastCharacter();
                     break;
-                case '.':
-                    addDecimalPoint();
-                    break;
                 default:
-                    appendToInput(value);
+                    appendToInput(buttonText);
                     break;
             }
         });
     });
 
-    function appendToInput(value) {
-        input.value += value;
+    function appendToInput(buttonText) {
+        input.value += buttonText;
     }
 
     function clearInput() {
@@ -38,12 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         input.value = input.value.slice(0, -1);
     }
 
-    function addDecimalPoint() {
-        if (!input.value.includes('.')) {
-            input.value += '.';
-        }
-    }
-
     function evaluateExpression() {
         try {
             input.value = eval(input.value);
@@ -52,4 +44,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
 
